@@ -26,6 +26,9 @@
 #include <sys/poll.h>
 #include <pthread.h>
 #include <linux/netlink.h>
+#include <sys/un.h>
+#include <fcntl.h>
+#include <dlfcn.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
@@ -237,6 +240,36 @@ static void process_low_power_hint(void* data)
     }
 
     low_power(on);
+
+#define TOUCH_INTERACTIVE_PATH "/sys/bus/i2c/devices/1-004a/tsp"
+
+static int sysfs_write(const char *path, char *s)
+{
+    char buf[80];
+    int len;
+    int fd = open(path, O_WRONLY);
+
+    if (fd < 0) {
+        strerror_r(errno, buf, sizeof(buf));
+        ALOGE("Error opening %s: %s\n", path, buf);
+        return -1;
+    }
+
+    len = write(fd, s, strlen(s));
+    if (len < 0) {
+        strerror_r(errno, buf, sizeof(buf));
+        ALOGE("Error writing to %s: %s\n", path, buf);
+        close(fd);
+        return -1;
+    }
+
+    close(fd);
+    return 0;
+}
+
+static void power_init(__attribute__((unused)) struct power_module *module)
+{
+    ALOGI("%s", __func__);
 }
 
 static void power_set_interactive(__attribute__((unused)) struct power_module *module, int on)
@@ -259,12 +292,16 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
         sync_thread(1);
         coresonline(1);
     }
+
+    ALOGV("%s %s", __func__, (on ? "ON" : "OFF"));
+    sysfs_write(TOUCH_INTERACTIVE_PATH, on ? "AUTO" : "ON");
 }
 
 static void power_hint( __attribute__((unused)) struct power_module *module,
                         __attribute__((unused)) power_hint_t hint,
                         __attribute__((unused)) void *data)
 {
+
     switch (hint) {
         case POWER_HINT_INTERACTION:
             ALOGV("POWER_HINT_INTERACTION");
