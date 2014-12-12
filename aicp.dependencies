@@ -6,7 +6,7 @@
   },
   {
    "repository": "AICP/proprietary_vendor_motorola",
-   "target_path": "vendor/motorola",
+   "target_path": "vendor/moto",
    "branch": "lp5.0"
   }	
 ]
