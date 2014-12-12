@@ -5,7 +5,7 @@
   "branch": "lp5.0"
   },
   {
-   "repository": "TheLoonyBin/proprietary_vendor_motorola",
+   "repository": "aicpshamu/proprietary_vendor_motorola",
    "target_path": "vendor/moto",
    "branch": "lp5.0"
   }	
