@@ -1,0 +1,5 @@
+[gerrit]
+host=gerrit.liquidsmooth.net
+port=29418
+project=LiquidSmooth-Devices/android_device_moto_shamu.git
+defaultbranch=lollipop

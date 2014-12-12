@@ -1,5 +1,3 @@
-AICP Nexus 6 (shamu)
-====================
 Copyright 2014 - AICP Project
 
 Device configuration for the Motorola Nexus 6 (shamu).
