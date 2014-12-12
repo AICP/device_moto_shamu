@@ -1,12 +1,12 @@
 [
   {
-  "repository": "Validus-Shamu/android_kernel_moto_shamu",
+  "repository": "AICP/kernel_moto_shamu",
   "target_path": "kernel/moto/shamu",
   "branch": "lp5.0"
   },
   {
-   "repository": "aicpshamu/proprietary_vendor_motorola",
-   "target_path": "vendor/moto",
+   "repository": "AICP/proprietary_vendor_motorola",
+   "target_path": "vendor/motorola",
    "branch": "lp5.0"
   }	
 ]
