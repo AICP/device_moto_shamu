@@ -347,6 +347,9 @@
 /system/vendor/lib/libtime_genoff.so
 /system/vendor/lib/libTimeService.so
 /system/vendor/lib/libxml.so
+/systemvendor/lib/soundfx/libqcbassboost.so
+/system/vendor/lib/soundfx/libqcvirt.so
+/system/vendor/lib/soundfx/libqcreverb.so
 /system/vendor/moto/audiomonitor/sensory/lts_en_us_9_5_2b.raw
 /system/vendor/moto/audiomonitor/sensory/nn_de_mfcc_16k_15_big_250_v3_4.raw
 /system/vendor/moto/audiomonitor/sensory/nn_en_uk_mfcc_16k_15_big_250_v2_2.raw
