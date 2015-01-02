@@ -1,0 +1,7 @@
+# hardware info
+ro.device.chipset=Qualcomm Snapdragon 805 APQ8084
+ro.device.cpu=Quad-core 2.7 GHz Krait 450
+ro.device.gpu=Qualcomm Adreno 420
+ro.device.rear_cam=13 MP
+ro.device.front_cam=2 MP
+ro.device.screen_res=1440x2560
