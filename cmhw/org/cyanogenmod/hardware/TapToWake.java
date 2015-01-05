@@ -21,18 +21,16 @@ import org.cyanogenmod.hardware.util.FileUtils;
 public class TapToWake {
 
     private static String CONTROL_PATH = "/sys/bus/i2c/devices/1-004a/tsp";
-    private static boolean mEnabled = true;
 
     public static boolean isSupported() {
         return true;
     }
 
     public static boolean isEnabled()  {
-        return mEnabled;
+        return "AUTO".equals(FileUtils.readOneLine(CONTROL_PATH));
     }
 
     public static boolean setEnabled(boolean state)  {
-        mEnabled = state;
         return FileUtils.writeLine(CONTROL_PATH, (state ? "AUTO" : "OFF"));
     }
 }
