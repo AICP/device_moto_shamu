@@ -33,6 +33,6 @@ public class TapToWake {
 
     public static boolean setEnabled(boolean state)  {
         mEnabled = state;
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "ON" : "OFF"));
+        return FileUtils.writeLine(CONTROL_PATH, (state ? "AUTO" : "OFF"));
     }
 }
