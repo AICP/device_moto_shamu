@@ -124,7 +124,6 @@ BOARD_SEPOLICY_UNION += \
         file.te \
         gsiffd.te \
         irsc_util.te \
-        kernel.te \
         mdm_helper.te \
         mediaserver.te \
         mpdecision.te \
@@ -139,7 +138,6 @@ BOARD_SEPOLICY_UNION += \
         surfaceflinger.te \
         system_app.te \
         system_server.te \
-        tap2wake_dev.te \
         tcmd.te \
         tee.te \
         te_macros \
