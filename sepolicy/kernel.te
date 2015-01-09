@@ -1,1 +1,0 @@
-allow kernel tap2wake_dev:file relabelto;
