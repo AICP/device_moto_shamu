@@ -127,6 +127,7 @@ BOARD_SEPOLICY_UNION += \
         domain.te \
         file.te \
         gsiffd.te \
+        init.te \
         irsc_util.te \
         mdm_helper.te \
         mediaserver.te \
