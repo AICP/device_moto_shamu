@@ -18,9 +18,9 @@ package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
 
-public class TapToWake {
+public class WakeGestures {
 
-    private static String CONTROL_PATH = "/sys/android_touch/doubletap2wake";
+    private static String CONTROL_PATH = "/sys/android_touch/wake_gestures";
 
     public static boolean isSupported() {
         return true;

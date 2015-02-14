@@ -149,7 +149,10 @@
 /sys/devices/mmi_sar_ctrl.[0-9]*/sar_wifi                u:object_r:sysfs_sar_wifi:s0
 
 # Hardware tunables
-/sys/bus/i2c/devices/1-004a/tsp	                         u:object_r:sysfs_hardware:s0
+/sys/android_touch/doubletap2wake	                         u:object_r:sysfs_hardware:s0
+/sys/android_touch/sweep2wake	                         u:object_r:sysfs_hardware:s0
+/sys/android_touch/sweep2sleep	                         u:object_r:sysfs_hardware:s0
+/sys/android_touch/wake_gestures	                         u:object_r:sysfs_hardware:s0
 /sys/devices/platform/kcal_ctrl.0/kcal                   u:object_r:sysfs_hardware:s0
 /sys/devices/platform/kcal_ctrl.0/kcal_ctrl              u:object_r:sysfs_hardware:s0
 /sys/drv2605/rtp_strength                                u:object_r:sysfs_hardware:s0
