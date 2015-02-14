@@ -103,9 +103,9 @@ on post-fs-data
     mkdir /data/misc/audio_cutback 0770 radio audio
 
     # Hardware tunables
-    chown root system /sys/bus/i2c/devices/1-004a/tsp
-    chmod 0664 /sys/bus/i2c/devices/1-004a/tsp
-    restorecon /sys/bus/i2c/devices/1-004a/tsp
+# chown root system /sys/bus/i2c/devices/1-004a/tsp
+# chmod 0664 /sys/bus/i2c/devices/1-004a/tsp
+# restorecon /sys/bus/i2c/devices/1-004a/tsp
     chown root system /sys/drv2605/rtp_strength
     chmod 0664 /sys/drv2605/rtp_strength
     restorecon /sys/drv2605/rtp_strength
@@ -115,6 +115,16 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
     restorecon /sys/devices/platform/kcal_ctrl.0/kcal
     restorecon /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
+
+    # Wake Gestures
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 0644 /sys/android_touch/doubletap2wake
+    chown system system /sys/android_touch/sweep2wake
+    chmod 0644 /sys/android_touch/sweep2wake
+    chown system system /sys/android_touch/sweep2sleep
+    chmod 0644 /sys/android_touch/sweep2sleep
+    chown system system /sys/android_touch/wake_gestures
+    chmod 0644 /sys/android_touch/wake_gestures
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
