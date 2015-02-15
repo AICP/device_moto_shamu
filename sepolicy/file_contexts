@@ -156,3 +156,16 @@
 
 # TapToWake
 /sys/devices/f9966000.i2c/i2c-1/1-004a/tsp               u:object_r:tap2wake_dev:s0
+/sys/android_touch/doubletap2wake              u:object_r:doubletap2wake_dev:s0
+
+# SweepToWake
+/sys/android_touch/sweep2wake              u:object_r:sweep2wake_dev:s0
+
+# SweepToSleep
+/sys/android_touch/sweep2sleep              u:object_r:sweep2sleep_dev:s0
+
+# Wake Gestures
+/sys/android_touch/wake_gestures             u:object_r:wakegestures_dev:s0
+
+# Haptic Feedback for Wake Gestures
+/sys/android_touch/vib_strenght            u:object_r:vib_strenght_dev:s0
