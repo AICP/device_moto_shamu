@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba65a107_58605d35",
+        "filename": "init.shamu.rc",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-15T06:32:39Z",
+      "side": 1,
+      "message": "You missed restorecon lines for all these files.\nCheck up for kcal and rtp_strength etc",
+      "revId": "d0286128c483f906b3d115204980afe763094830",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": false
+    }
+  ]
+}
