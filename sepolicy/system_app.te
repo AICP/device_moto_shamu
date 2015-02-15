@@ -4,5 +4,9 @@ allow system_app shell_data_file:dir search;
 allow system_app time:unix_stream_socket connectto;
 
 allow system_app sysfs_hardware:file rw_file_perms;
-
 allow system_app tap2wake_dev:file rw_file_perms;
+allow system_app doubletap2wake_dev:file rw_file_perms;
+allow system_app sweep2wake_dev:file rw_file_perms;
+allow system_app sweep2sleep_dev:file rw_file_perms;
+allow system_app wakegestures_dev:file rw_file_perms;
+allow system_app vib_strenght_dev:file rw_file_perms;
