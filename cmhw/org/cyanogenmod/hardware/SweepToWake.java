@@ -18,9 +18,9 @@ package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
 
-public class TapToWake {
+public class SweepToWake {
 
-    private static String CONTROL_PATH = "/sys/android_touch/doubletap2wake";
+    private static String CONTROL_PATH = "/sys/android_touch/sweep2wake";
 
     public static boolean isSupported() {
         return true;
