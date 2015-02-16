@@ -117,20 +117,20 @@ on post-fs-data
     restorecon /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
 
     # Wake Gestures
-    chown system system /sys/android_touch/doubletap2wake
-    chmod 0644 /sys/android_touch/doubletap2wake
+    chown root system /sys/android_touch/doubletap2wake
+    chmod 0664 /sys/android_touch/doubletap2wake
     restorecon /sys/android_touch/doubletap2wake
-    chown system system /sys/android_touch/sweep2wake
-    chmod 0644 /sys/android_touch/sweep2wake
+    chown root system /sys/android_touch/sweep2wake
+    chmod 0664 /sys/android_touch/sweep2wake
     restorecon /sys/android_touch/sweep2wake
-    chown system system /sys/android_touch/sweep2sleep
-    chmod 0644 /sys/android_touch/sweep2sleep
+    chown root system /sys/android_touch/sweep2sleep
+    chmod 0664 /sys/android_touch/sweep2sleep
     restorecon /sys/android_touch/sweep2sleep
-    chown system system /sys/android_touch/wake_gestures
-    chmod 0644 /sys/android_touch/wake_gestures
+    chown root system /sys/android_touch/wake_gestures
+    chmod 0664 /sys/android_touch/wake_gestures
     restorecon /sys/android_touch/wake_gestures
-    chown system system /sys/android_touch/vib_strength
-    chmod 0644 /sys/android_touch/vib_strength
+    chown root system /sys/android_touch/vib_strength
+    chmod 0664 /sys/android_touch/vib_strength
     restorecon /sys/android_touch/vib_strength
 
 on early-boot
