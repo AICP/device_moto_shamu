@@ -434,3 +434,6 @@ vendor/firmware/aonvr2.bin
 vendor/firmware/bcm20795_firmware.ncd
 vendor/firmware/bcm4354A2.hcd
 xbin/wlutil
+
+# S2WPhoneCallDisabler
+-priv-app/S2WPhoneCallDisabler/S2WPhoneCallDisabler.apk
