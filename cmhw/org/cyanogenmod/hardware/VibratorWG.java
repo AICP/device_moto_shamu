@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2015 AICP
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@ package org.cyanogenmod.hardware;
 import org.cyanogenmod.hardware.util.FileUtils;
 import java.io.File;
 
-public class VibratorHW {
-    private static String AMP_PATH = "/sys/drv2605/rtp_strength";
+public class VibratorWG {
+    private static String VIB_PATH = "/sys/android_touch/vib_strength";
 
     public static boolean isSupported() {
-        return new File(AMP_PATH).exists();
+        return new File(VIB_PATH).exists();
     }
 
     public static int getMaxIntensity() {
@@ -39,14 +39,14 @@ public class VibratorHW {
     }
 
     public static int getCurIntensity() {
-        return Integer.parseInt(FileUtils.readOneLine(AMP_PATH));
+        return Integer.parseInt(FileUtils.readOneLine(VIB_PATH));
     }
 
     public static int getDefaultIntensity() {
-        return 63;
+        return 20;
     }
 
     public static boolean setIntensity(int intensity) {
-        return FileUtils.writeLine(AMP_PATH, String.valueOf(intensity));
+        return FileUtils.writeLine(VIB_PATH, String.valueOf(intensity));
     }
 }
