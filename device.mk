@@ -358,3 +358,7 @@ PRODUCT_OEM_PROPERTIES := \
     ro.config.wallpaper_component \
     ro.oem.* \
     oem.*
+
+# S2WPhoneCallDisabler
+PRODUCT_PACKAGES += \
+    S2WPhoneCallDisabler
