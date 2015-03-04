@@ -16,6 +16,8 @@
 
 package org.cyanogenmod.hardware;
 
+import java.io.File;
+import java.util.Scanner;
 import org.cyanogenmod.hardware.util.FileUtils;
 
 public class DisplayColorCalibration {
@@ -23,25 +25,27 @@ public class DisplayColorCalibration {
     private static final String COLOR_FILE_CTRL = "/sys/devices/platform/kcal_ctrl.0/kcal_ctrl";
 
     public static boolean isSupported() {
-        return true;
+        File f = new File(COLOR_FILE);
+        return f.exists();
     }
 
     public static int getMaxValue()  {
+        return 32768;
+    }
+
+    public static int getMinValue()  {
         return 255;
     }
-    public static int getMinValue()  {
-        return 0;
-    }
+
     public static int getDefValue() {
         return getMaxValue();
     }
+
     public static String getCurColors()  {
         return FileUtils.readOneLine(COLOR_FILE);
     }
-    public static boolean setColors(String colors)  {
-        if (!FileUtils.writeLine(COLOR_FILE, colors)) {
-            return false;
-        }
-        return FileUtils.writeLine(COLOR_FILE_CTRL, "1");
+
+    public static boolean setColors(String colors) {
+        return FileUtils.writeLine(COLOR_FILE, colors);
     }
 }

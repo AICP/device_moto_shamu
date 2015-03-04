@@ -150,9 +150,15 @@
 
 # Hardware tunables
 /sys/bus/i2c/devices/1-004a/tsp	                         u:object_r:sysfs_hardware:s0
-/sys/devices/platform/kcal_ctrl.0/kcal                   u:object_r:sysfs_hardware:s0
-/sys/devices/platform/kcal_ctrl.0/kcal_ctrl              u:object_r:sysfs_hardware:s0
 /sys/drv2605/rtp_strength                                u:object_r:sysfs_hardware:s0
+
+# Display Color Calibration Tools
+/sys/devices/platform/kcal_ctrl.0/kcal                   u:object_r:sysfs_display:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_ctrl              u:object_r:sysfs_display:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_cont             u:object_r:sysfs_display:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_hue             u:object_r:sysfs_display:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_sat             u:object_r:sysfs_display:s0
+/sys/devices/platform/kcal_ctrl.0/kcal_val             u:object_r:sysfs_display:s0
 
 # TapToWake
 /sys/devices/f9966000.i2c/i2c-1/1-004a/tsp               u:object_r:tap2wake_dev:s0
