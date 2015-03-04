@@ -17,36 +17,20 @@
 package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
-import java.io.File;
 
-public class VibratorHW {
-    private static String AMP_PATH = "/sys/drv2605/rtp_strength";
+public class SweepToSleep {
+
+    private static String CONTROL_PATH = "/sys/android_touch/sweep2sleep";
 
     public static boolean isSupported() {
-        return new File(AMP_PATH).exists();
+        return true;
     }
 
-    public static int getMaxIntensity() {
-        return 100;
+    public static boolean isEnabled()  {
+        return "1".equals(FileUtils.readOneLine(CONTROL_PATH));
     }
 
-    public static int getMinIntensity() {
-        return 0;
-    }
-
-    public static int getWarningThreshold() {
-        return 85;
-    }
-
-    public static int getCurIntensity() {
-        return Integer.parseInt(FileUtils.readOneLine(AMP_PATH));
-    }
-
-    public static int getDefaultIntensity() {
-        return 63;
-    }
-
-    public static boolean setIntensity(int intensity) {
-        return FileUtils.writeLine(AMP_PATH, String.valueOf(intensity));
+    public static boolean setEnabled(boolean state)  {
+        return FileUtils.writeLine(CONTROL_PATH, (state ? "1" : "0"));
     }
 }

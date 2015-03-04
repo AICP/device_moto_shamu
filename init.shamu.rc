@@ -115,6 +115,23 @@ on post-fs-data
     chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
     restorecon /sys/devices/virtual/graphics/fb0/rgb
 
+    # Wake Gestures
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 0644 /sys/android_touch/doubletap2wake
+    restorecon /sys/android_touch/doubletap2wake
+    chown system system /sys/android_touch/sweep2wake
+    chmod 0644 /sys/android_touch/sweep2wake
+    restorecon /sys/android_touch/sweep2wake
+    chown system system /sys/android_touch/sweep2sleep
+    chmod 0644 /sys/android_touch/sweep2sleep
+    restorecon /sys/android_touch/sweep2sleep
+    chown system system /sys/android_touch/wake_gestures
+    chmod 0644 /sys/android_touch/wake_gestures
+    restorecon /sys/android_touch/wake_gestures
+    chown system system /sys/android_touch/vib_strength
+    chmod 0644 /sys/android_touch/vib_strength
+    restorecon /sys/android_touch/vib_strength
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864

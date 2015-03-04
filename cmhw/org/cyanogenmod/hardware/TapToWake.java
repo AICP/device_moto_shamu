@@ -20,17 +20,17 @@ import org.cyanogenmod.hardware.util.FileUtils;
 
 public class TapToWake {
 
-    private static String CONTROL_PATH = "/sys/bus/i2c/devices/1-004a/tsp";
+    private static String CONTROL_PATH = "/sys/android_touch/doubletap2wake";
 
     public static boolean isSupported() {
         return true;
     }
 
     public static boolean isEnabled()  {
-        return "AUTO".equals(FileUtils.readOneLine(CONTROL_PATH));
+        return "1".equals(FileUtils.readOneLine(CONTROL_PATH));
     }
 
     public static boolean setEnabled(boolean state)  {
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "AUTO" : "OFF"));
+        return FileUtils.writeLine(CONTROL_PATH, (state ? "1" : "0"));
     }
 }
