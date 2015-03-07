@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,30 +18,38 @@ package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
 
+import java.io.File;
+
 public class DisplayColorCalibration {
-    private static final String COLOR_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal";
-    private static final String COLOR_FILE_CTRL = "/sys/devices/platform/kcal_ctrl.0/kcal_ctrl";
+
+    private static final String KCAL_TUNING_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal";
+    private static final String KCAL_CTRL_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal_enable";
 
     public static boolean isSupported() {
-        return true;
+        File file = new File(KCAL_TUNING_FILE);
+        return file.exists();
     }
 
-    public static int getMaxValue()  {
+    public static int getMaxValue() {
         return 255;
     }
-    public static int getMinValue()  {
-        return 0;
+
+    public static int getMinValue() {
+        return 35;
     }
+
     public static int getDefValue() {
-        return getMaxValue();
+        return 255;
     }
-    public static String getCurColors()  {
-        return FileUtils.readOneLine(COLOR_FILE);
+
+    public static String getCurColors() {
+        return FileUtils.readOneLine(KCAL_TUNING_FILE);
     }
-    public static boolean setColors(String colors)  {
-        if (!FileUtils.writeLine(COLOR_FILE, colors)) {
+
+    public static boolean setColors(String colors) {
+        if (!FileUtils.writeLine(KCAL_TUNING_FILE, colors)) {
             return false;
         }
-        return FileUtils.writeLine(COLOR_FILE_CTRL, "1");
+        return FileUtils.writeLine(KCAL_CTRL_FILE, "1");
     }
 }

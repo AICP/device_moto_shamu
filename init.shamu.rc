@@ -102,20 +102,6 @@ on post-fs-data
     # rild files
     mkdir /data/misc/audio_cutback 0770 radio audio
 
-    # Hardware tunables
-    chown root system /sys/bus/i2c/devices/1-004a/tsp
-    chmod 0664 /sys/bus/i2c/devices/1-004a/tsp
-    restorecon /sys/bus/i2c/devices/1-004a/tsp
-    chown root system /sys/drv2605/rtp_strength
-    chmod 0664 /sys/drv2605/rtp_strength
-    restorecon /sys/drv2605/rtp_strength
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal
-    chown root system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
-    chmod 0664 /sys/devices/platform/kcal_ctrl.0/kcal
-    chmod 0664 /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
-    restorecon /sys/devices/platform/kcal_ctrl.0/kcal
-    restorecon /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
-
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -262,6 +248,28 @@ on boot
     chmod 664 /sys/class/leds/red/brightness
     chmod 664 /sys/class/leds/green/brightness
     chmod 664 /sys/class/leds/blue/brightness
+
+    # Hardware tunables
+    chown root system /sys/bus/i2c/devices/1-004a/tsp
+    chmod 0664 /sys/bus/i2c/devices/1-004a/tsp
+    restorecon /sys/bus/i2c/devices/1-004a/tsp
+    chown root system /sys/drv2605/rtp_strength
+    chmod 0664 /sys/drv2605/rtp_strength
+    restorecon /sys/drv2605/rtp_strength
+
+    # Vibrator permissions
+    chown system system /sys/vibrator/pwmvalue
+    chmod 0644 /sys/vibrator/pwmvalue
+
+    # Display color calibration
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_invert
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
 
 # subsystem ramdump collection
 on property:persist.sys.qc.sub.rdump.on=*
