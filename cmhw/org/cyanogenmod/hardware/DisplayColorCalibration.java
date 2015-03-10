@@ -19,8 +19,8 @@ package org.cyanogenmod.hardware;
 import org.cyanogenmod.hardware.util.FileUtils;
 
 public class DisplayColorCalibration {
-    private static final String COLOR_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal";
-    private static final String COLOR_FILE_CTRL = "/sys/devices/platform/kcal_ctrl.0/kcal_ctrl";
+    private static final String KCAL_TUNING_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal";
+    private static final String KCAL_CTRL_FILE = "/sys/devices/platform/kcal_ctrl.0/kcal_enable";
 
     public static boolean isSupported() {
         return true;
@@ -29,8 +29,9 @@ public class DisplayColorCalibration {
     public static int getMaxValue()  {
         return 255;
     }
-    public static int getMinValue()  {
-        return 0;
+
+    public static int getMinValue() {
+        return 35;
     }
     public static int getDefValue() {
         return getMaxValue();
