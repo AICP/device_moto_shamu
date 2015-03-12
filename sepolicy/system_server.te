@@ -9,7 +9,12 @@ unix_socket_send(system_server, mpdecision, mpdecision)
 unix_socket_connect(system_server, sensors, sensors)
 allow system_server sensors_socket:sock_file r_file_perms;
 
+# CMHW Tunables
 allow system_server sysfs_display:file rw_file_perms;
-
 allow system_server tap2wake_dev:file rw_file_perms;
 allow system_server sysfs_vibrator:file rw_file_perms;
+allow system_server doubletap2wake_dev:file rw_file_perms;
+allow system_server sweep2wake_dev:file rw_file_perms;
+allow system_server sweep2sleep_dev:file rw_file_perms;
+allow system_server wakegestures_dev:file rw_file_perms;
+allow system_server vib_strength_dev:file rw_file_perms;

@@ -170,3 +170,10 @@
 
 # Sunlight Mode
 /sys/devices/virtual/graphics/fb0/hbm                    u:object_r:sysfs_display:s0
+
+# for Settings' access to AICP Kernel Tunables
+/sys/android_touch/doubletap2wake              u:object_r:doubletap2wake_dev:s0
+/sys/android_touch/sweep2wake              u:object_r:sweep2wake_dev:s0
+/sys/android_touch/sweep2sleep              u:object_r:sweep2sleep_dev:s0
+/sys/android_touch/wake_gestures             u:object_r:wakegestures_dev:s0
+/sys/android_touch/vib_strength            u:object_r:vib_strength_dev:s0
