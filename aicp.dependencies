@@ -1,12 +1,12 @@
 [
   {
-    "repository": "CyanogenMod/android_kernel_moto_shamu",
+    "repository": "AICP/kernel_moto_shamu",
     "target_path": "kernel/moto/shamu",
-    "branch":      "staging/cm-12.1"
+    "branch":      "lp5.0"
   },
   {
     "repository": "AICP/proprietary_vendor_motorola",
     "target_path": "vendor/motorola",
-    "branch":      "lp5.1"
+    "branch":      "lp5.0"
   }
 ]
