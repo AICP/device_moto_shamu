@@ -20,33 +20,33 @@ import org.cyanogenmod.hardware.util.FileUtils;
 import java.io.File;
 
 public class VibratorHW {
-    private static String AMP_PATH = "/sys/drv2605/rtp_strength";
+    private static String LEVEL_PATH = "/sys/vibrator/pwmvalue";
 
     public static boolean isSupported() {
-        return new File(AMP_PATH).exists();
+        return new File(LEVEL_PATH).exists();
     }
 
-    public static int getMaxIntensity() {
-        return 100;
+    public static int getMaxIntensity()  {
+        return 127;
     }
 
-    public static int getMinIntensity() {
+    public static int getMinIntensity()  {
         return 0;
     }
 
-    public static int getWarningThreshold() {
-        return 85;
+    public static int getWarningThreshold()  {
+        return -1;
     }
 
-    public static int getCurIntensity() {
-        return Integer.parseInt(FileUtils.readOneLine(AMP_PATH));
+    public static int getCurIntensity()  {
+        return Integer.parseInt(FileUtils.readOneLine(LEVEL_PATH));
     }
 
-    public static int getDefaultIntensity() {
-        return 63;
+    public static int getDefaultIntensity()  {
+        return getMaxIntensity();
     }
 
-    public static boolean setIntensity(int intensity) {
-        return FileUtils.writeLine(AMP_PATH, String.valueOf(intensity));
+    public static boolean setIntensity(int intensity)  {
+        return FileUtils.writeLine(LEVEL_PATH, String.valueOf(intensity));
     }
 }
