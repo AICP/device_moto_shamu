@@ -135,7 +135,6 @@ BOARD_SEPOLICY_UNION += \
         file.te \
         gsiffd.te \
         ims.te \
-        init.te \
         irsc_util.te \
         mdm_helper.te \
         mediaserver.te \
