@@ -260,10 +260,6 @@ on boot
     chmod 0644 /sys/bus/i2c/devices/1-004a/tsp
     chown system system /sys/drv2605/rtp_strength
     chmod 0644 /sys/drv2605/rtp_strength
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
 
     # Wake Gestures
     chown system system /sys/android_touch/doubletap2wake
