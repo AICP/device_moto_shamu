@@ -157,6 +157,10 @@
 /system/bin/imsdatadaemon                       u:object_r:ims_exec:s0
 /system/bin/imsqmidaemon                        u:object_r:ims_exec:s0
 
+# CNE
+/dev/socket/cnd  u:object_r:cnd_socket:s0
+/system/bin/cnd  u:object_r:cnd_exec:s0
+
 # Hardware tunables
 /sys/bus/i2c/devices/1-004a/tsp	                         u:object_r:sysfs_vibrator:s0
 /sys/drv2605/rtp_strength                                u:object_r:sysfs_vibrator:s0
@@ -179,10 +183,6 @@
 
 # Sunlight Mode
 /sys/devices/virtual/graphics/fb0/hbm                    u:object_r:sysfs_display:s0
-
-# CNE
-/dev/socket/cnd                                 u:object_r:cnd_socket:s0
-/system/bin/cnd                                 u:object_r:cnd_exec:s0
 
 # for Settings' access to AICP Kernel Tunables
 /sys/android_touch/doubletap2wake              u:object_r:doubletap2wake_dev:s0
