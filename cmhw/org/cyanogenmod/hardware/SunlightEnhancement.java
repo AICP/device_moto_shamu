@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,18 @@ package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
 
-import android.os.SystemProperties;
+import android.util.Log;
 
 import java.io.File;
 
+/**
+ * Facemelt mode!
+ */
 public class SunlightEnhancement {
 
-    private static String FILE_HBM = "/sys/class/graphics/fb0/hbm";
+    private static final String TAG = "SunlightEnhancement";
+
+    private static final String FILE_HBM = "/sys/class/graphics/fb0/hbm";
 
     /**
      * Whether device supports HBM
@@ -48,11 +53,12 @@ public class SunlightEnhancement {
      * the operation failed while reading the status; true in any other case.
      */
     public static boolean isEnabled() {
-        if (Integer.parseInt(FileUtils.readOneLine(FILE_HBM)) == 1) {
-            return true;
-        } else {
-            return false;
+        try {
+            return Integer.parseInt(FileUtils.readOneLine(FILE_HBM)) > 0;
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage(), e);
         }
+        return false;
     }
 
     /**
@@ -63,11 +69,7 @@ public class SunlightEnhancement {
      * failed; true in any other case.
      */
     public static boolean setEnabled(boolean status) {
-        if (status == true) {
-            return FileUtils.writeLine(FILE_HBM, "1");
-        } else {
-            return FileUtils.writeLine(FILE_HBM, "0");
-        }
+        return FileUtils.writeLine(FILE_HBM, status ? "2" : "0");
     }
 
     /**
