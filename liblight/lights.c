@@ -190,7 +190,7 @@ set_light_notifications(struct light_device_t* dev,
             rgb[2] = (rgb[2] * brightness) / 0xFF;
 
         // Update with the new color
-        g_notification.color = (rgb[0] << 16) + (rgb[1] << 8) + rgb[2];
+        g_notification.color = (0xFF<<24)+(rgb[0]<<16)+(rgb[1]<<8)+rgb[2];
     }
 
     handle_speaker_battery_locked(dev);
@@ -204,6 +204,7 @@ set_light_battery(struct light_device_t* dev,
 {
     pthread_mutex_lock(&g_lock);
     g_battery = *state;
+    g_battery.color = 0xFF000000 | g_battery.color;
     handle_speaker_battery_locked(dev);
     pthread_mutex_unlock(&g_lock);
     return 0;
