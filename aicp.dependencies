@@ -7,6 +7,6 @@
   {
     "repository": "AICP/proprietary_vendor_motorola",
     "target_path": "vendor/motorola",
-    "branch":      "lp5.1"
+    "branch":      "mm6.0"
   }
 ]
