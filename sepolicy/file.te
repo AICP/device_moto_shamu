@@ -42,3 +42,15 @@ type sysfs_cpu_online, fs_type, sysfs_type;
 type sysfs_cpuboost, fs_type, sysfs_type;
 type sysfs_capsense_update, fs_type, sysfs_type;
 type sysfs_sar_wifi, fs_type, sysfs_type;
+
+#CMHW Service Tunables
+type tap2wake_dev, fs_type, sysfs_type;
+type sysfs_vibrator, fs_type, sysfs_type;
+type sysfs_display, fs_type, sysfs_type;
+
+#AICP Kernel Tunables
+type doubletap2wake_dev, fs_type, sysfs_type;
+type sweep2wake_dev, fs_type, sysfs_type;
+type sweep2sleep_dev, fs_type, sysfs_type;
+type wakegestures_dev, fs_type, sysfs_type;
+type vib_strength_dev, fs_type, sysfs_type;
