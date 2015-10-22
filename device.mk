@@ -411,3 +411,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb
+
+# http://b/15193147
+# TODO(danalbert): Remove this once stlport is dead and gone.
+PRODUCT_PACKAGES += \
+    libstlport
