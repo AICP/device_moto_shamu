@@ -46,7 +46,6 @@ type sysfs_sar_wifi, fs_type, sysfs_type;
 #CMHW Service Tunables
 type tap2wake_dev, fs_type, sysfs_type;
 type sysfs_vibrator, fs_type, sysfs_type;
-type sysfs_display, fs_type, sysfs_type;
 
 #AICP Kernel Tunables
 type doubletap2wake_dev, fs_type, sysfs_type;
