@@ -260,24 +260,13 @@ on boot
     chmod 0644 /sys/android_touch/vib_strength
 
     # Display color calibration
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_enable
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_cont
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_hue
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_invert
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_invert
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_min
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_sat
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
-    chmod 0644 /sys/devices/platform/kcal_ctrl.0/kcal_val
+    chown system system /sys/devices/virtual/graphics/fb0/rgb
+    chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
+
+    # Sunlight Enhancement mode
+    chown system system /sys/devices/virtual/graphics/fb0/hbm
+    chmod 0660 /sys/devices/virtual/graphics/fb0/hbm
+    symlink /sys/devices/virtual/graphics/fb0/hbm /sys/devices/virtual/graphics/fb0/sre
 
 # subsystem ramdump collection
 on property:persist.sys.qc.sub.rdump.on=*

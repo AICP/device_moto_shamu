@@ -144,6 +144,9 @@ EXTENDED_FONT_FOOTPRINT := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/moto/shamu/cmhw
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS := \
+    hardware/cyanogen   \
+    device/moto/shamu/cmhw
 
 -include vendor/motorola/shamu/BoardConfigVendor.mk
