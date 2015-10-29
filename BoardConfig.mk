@@ -143,4 +143,7 @@ EXTENDED_FONT_FOOTPRINT := true
 # Enable workaround for slow rom flash
 BOARD_SUPPRESS_SECURE_ERASE := true
 
+# CMHW
+BOARD_HARDWARE_CLASS := device/moto/shamu/cmhw
+
 -include vendor/motorola/shamu/BoardConfigVendor.mk
