@@ -41,7 +41,7 @@
 #define STATE_HDR_OFF "state=3"
 #define MAX_LENGTH         50
 #define BOOST_SOCKET       "/dev/socket/mpdecision/pb"
-#define WAKE_GESTURE_PATH "/sys/bus/i2c/devices/1-004a/tsp"
+#define WAKE_GESTURE_PATH "/sys/devices/f9966000.i2c/i2c-1/1-004a/tsp"
 static int client_sockfd;
 static struct sockaddr_un client_addr;
 static int last_state = -1;

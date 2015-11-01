@@ -244,6 +244,8 @@ on boot
     # Hardware tunables
     chown system system /sys/bus/i2c/devices/1-004a/tsp
     chmod 0644 /sys/bus/i2c/devices/1-004a/tsp
+    chown system system /sys/devices/f9966000.i2c/i2c-1/1-004a/tsp
+    chmod 0644 /sys/devices/f9966000.i2c/i2c-1/1-004a/tsp
     chown system system /sys/drv2605/rtp_strength
     chmod 0644 /sys/drv2605/rtp_strength
 
