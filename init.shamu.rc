@@ -264,9 +264,8 @@ on boot
     chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
 
     # Sunlight Enhancement mode
-    chown system system /sys/devices/virtual/graphics/fb0/hbm
-    chmod 0660 /sys/devices/virtual/graphics/fb0/hbm
-    symlink /sys/devices/virtual/graphics/fb0/hbm /sys/devices/virtual/graphics/fb0/sre
+    chown system system /sys/devices/virtual/graphics/fb0/sre
+    chmod 0660 /sys/devices/virtual/graphics/fb0/sre
 
 # subsystem ramdump collection
 on property:persist.sys.qc.sub.rdump.on=*
