@@ -9,3 +9,18 @@ unix_socket_connect(untrusted_app, adspd, adspd)
 
 allow untrusted_app adspd_data_file:dir r_dir_perms;
 allow untrusted_app adspd_data_file:file r_file_perms;
+
+allow untrusted_app doubletap2wake_dev:dir rw_dir_perms;
+allow untrusted_app doubletap2wake_dev:file rw_file_perms;
+
+allow untrusted_app sweep2wake_dev:dir rw_dir_perms;
+allow untrusted_app sweep2wake_dev:file rw_file_perms;
+
+allow untrusted_app sweep2sleep_dev:dir rw_dir_perms;
+allow untrusted_app sweep2sleep_dev:file rw_file_perms;
+
+allow untrusted_app wakegestures_dev:dir rw_dir_perms;
+allow untrusted_app wakegestures_dev:file rw_file_perms;
+
+allow untrusted_app vib_strength_dev:dir rw_dir_perms;
+allow untrusted_app vib_strength_dev:file rw_file_perms;
