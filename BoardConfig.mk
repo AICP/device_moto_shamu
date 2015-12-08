@@ -20,6 +20,8 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
 
+ENABLE_CPUSETS := true
+
 TARGET_NO_BOOTLOADER := true
 
 # Inline kernel building
@@ -112,6 +114,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 TARGET_RECOVERY_FSTAB = device/moto/shamu/fstab.shamu
+# Ensure f2fstools are built
+TARGET_USERIMAGES_USE_F2FS := true
 
 # Ensure f2fstools are built
 TARGET_USERIMAGES_USE_F2FS := true

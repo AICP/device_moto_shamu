@@ -42,7 +42,11 @@ function extract() {
             else
                 # if file does not exist try OEM target
                 if [ "$?" != "0" ]; then
-                    test -d $2/$DEST || mkdir -p $2/$DEST && cp $COPY_FROM/$FILE $2/$DEST
+                    DIR=`dirname $DEST`
+                    if [ ! -d $2/$DIR ]; then
+                        mkdir -p $2/$DIR
+                    fi
+                    cp $COPY_FROM/$FILE $2/$DEST
                 fi
             fi
         fi
