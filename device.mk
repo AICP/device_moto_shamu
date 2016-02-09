@@ -281,8 +281,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.qcril_uim_vcc_feature=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.default_cdma_sub=0 \
-    ro.telephony.ril_class=shamuRIL
+    ro.telephony.default_cdma_sub=0
 
 # LTE, CDMA, GSM/WCDMA
 PRODUCT_PROPERTY_OVERRIDES += \
