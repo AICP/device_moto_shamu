@@ -187,6 +187,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Snap Config
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.cpp.duplication=false
+
 PRODUCT_PACKAGES += \
     libqomx_core \
     libmm-qcamera \
