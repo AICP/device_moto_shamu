@@ -151,4 +151,6 @@ BOARD_HARDWARE_CLASS := \
 
 USE_CLANG_PLATFORM_BUILD := true
 
--include vendor/motorola/shamu/BoardConfigVendor.mk
+TARGET_FS_CONFIG_GEN += device/moto/shamu/config.fs
+
+-include vendor/moto/shamu/BoardConfigVendor.mk
