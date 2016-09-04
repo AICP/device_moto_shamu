@@ -206,6 +206,9 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609
 
