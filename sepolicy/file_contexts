@@ -88,6 +88,7 @@
 #Add context for IMS Socket node
 /dev/socket/ims_qmid            u:object_r:ims_socket:s0
 /dev/socket/ims_datad           u:object_r:ims_socket:s0
+/dev/socket/ims_rtpd            u:object_r:ims_socket:s0
 
 # Shared memory log
 /dev/smem_log                   u:object_r:shared_log_device:s0
@@ -150,6 +151,8 @@
 # Sysfs files used by qmuxd
 /sys/devices/virtual/smdpkt/smdcntl([0-9])+/open_timeout u:object_r:sysfs_smdcntl_open_timeout:s0
 
+/sys/devices/f9200000\.ssusb(/.*)?                       u:object_r:sysfs_usb:s0
+
 # mmi_touch related /sys files
 /sys/devices/f9966000\.i2c/i2c-1/1-004a(/.*)?            u:object_r:sysfs_mmi_touch:s0
 
@@ -171,6 +174,7 @@
 
 /system/bin/imsdatadaemon                       u:object_r:ims_exec:s0
 /system/bin/imsqmidaemon                        u:object_r:ims_exec:s0
+/system/bin/ims_rtp_daemon                      u:object_r:ims_exec:s0
 
 /dev/socket/cnd  u:object_r:cnd_socket:s0
 /system/bin/cnd  u:object_r:cnd_exec:s0
