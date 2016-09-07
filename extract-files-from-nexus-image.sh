@@ -15,11 +15,11 @@
 # limitations under the License.
 #
 
-export VENDOR=huawei
-export DEVICE=angler
-export BUILD=mtc20l
-export FACTORY_URL=https://dl.google.com/dl/android/aosp/angler-mtc20l-factory-a74ad54f.zip
-export FACTORY_SHA256=a74ad54f0deab52cd869f81c85597212fe1a38228ddbfbbf370f9ec9a8ab142a
+export VENDOR=motorola
+export DEVICE=shamu
+export BUILD=mob31e
+export FACTORY_URL=https://dl.google.com/dl/android/aosp/shamu-mob31e-factory-051e2d25.zip
+export FACTORY_SHA256=051e2d2525fcfc422c73e95bf360437c241789ea65a42bd95800f84f9da7a7e8
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
