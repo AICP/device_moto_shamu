@@ -192,6 +192,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.shamu
 
+
+# Telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 # for launcher layout
 #PRODUCT_PACKAGES += \
 #    ShamuLayout
