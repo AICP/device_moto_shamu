@@ -192,6 +192,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.shamu
 
+# Build ims-common package
+PRODUCT_PACKAGES += \
+    ims-ext-common
+
 # for launcher layout
 #PRODUCT_PACKAGES += \
 #    ShamuLayout
