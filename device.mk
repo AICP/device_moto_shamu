@@ -19,7 +19,6 @@
 #
 # Everything in this directory will become public
 
-
 PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.rc:root/init.shamu.rc \
     device/moto/shamu/init.shamu.power.rc:root/init.shamu.power.rc \
@@ -101,10 +100,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/moto/shamu/spn-conf.xml:system/etc/spn-conf.xml
 
-# This device is 560dpi.  However the platform doesn't
-# currently contain all of the bitmaps at 560dpi density so
-# we do this little trick to fall back to the xxhdpi version
-# if the 560dpi doesn't exist.
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
 # A list of dpis to select prebuilt apk, in precedence order.
@@ -156,6 +151,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false \
+    audio.offload.buffer.size.kb=32 \
+    audio.offload.video=true \
+    audio.offload.multiple.enabled=false \
+    audio.offload.gapless.enabled=true \
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.pcm.24bit.enable=true \
     ro.audio.monitorRotation=true \
     drm.service.enabled=true \
     ro.facelock.black_timeout=400 \
@@ -164,6 +165,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.lively_timeout=2500 \
     ro.facelock.est_max_time=600 \
     ro.facelock.use_intro_anim=false
+
+# Enable enhanced offload features
+AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := true
 
 # Audio effects
 PRODUCT_PACKAGES += \
@@ -196,6 +200,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck
+
 # for launcher layout
 #PRODUCT_PACKAGES += \
 #    ShamuLayout
@@ -206,12 +214,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keystore.msm8084
 
+# Camera
 PRODUCT_PACKAGES += \
-    librmnetctl \
-    libxml2
+    Snap
+
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196609
+    ro.opengles.version=196610
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=560
@@ -225,6 +237,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.no_wait_for_card=1 \
+    persist.radio.data_no_toggle=1 \
     persist.radio.sib16_support=1 \
     persist.data.qmi.adb_logmask=0 \
     persist.radio.alt_mbn_name=tmo_alt.mbn
@@ -237,10 +250,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
     persist.radio.ignore_ims_wlan=1 \
     persist.radio.data_con_rprt=1
-
-# Rich Communications Service is disabled in 5.1
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rcs.supported=0
 
 #Reduce IMS logging
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -323,9 +332,17 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    libxml2
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:system/etc/permissions/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml \
     device/moto/shamu/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/moto/shamu/nfc/libnfc-brcm-20795a10.conf:system/etc/libnfc-brcm-20795a10.conf
 
@@ -356,19 +373,27 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 $(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
 
+# In userdebug, add minidebug info the the boot image and the system server to support
+# diagnosing native crashes.
+ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
+    # Boot image.
+    PRODUCT_DEX_PREOPT_BOOT_FLAGS += --generate-mini-debug-info
+    # System server and some of its services.
+    # Note: we cannot use PRODUCT_SYSTEM_SERVER_JARS, as it has not been expanded at this point.
+    $(call add-product-dex-preopt-module-config,services,--generate-mini-debug-info)
+    $(call add-product-dex-preopt-module-config,wifi-service,--generate-mini-debug-info)
+endif
+
 $(call inherit-product-if-exists, hardware/qcom/msm8x84/msm8x84.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x84/msm8x84-gpu-vendor.mk)
-
-# setup dm-verity configs.
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/msm_sdcc.1/by-name/system
-$(call inherit-product, build/target/product/verity.mk)
 
 # setup scheduler tunable
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.qualcomm.perf.cores_online=2
 
 PRODUCT_PACKAGES += \
-    power.shamu
+    power.shamu \
+    thermal.shamu
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
@@ -399,6 +424,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     audio_hal.period_size=192
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
+# OEM Unlock reporting
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.oem_unlock_supported=1
