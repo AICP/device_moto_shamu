@@ -214,6 +214,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Snap Config
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.cpp.duplication=false
+
 # Gello
 PRODUCT_PACKAGES += \
     Gello
