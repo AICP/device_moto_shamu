@@ -216,10 +216,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_PACKAGES += \
 #    Gello
 
-# Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=rome
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
 
