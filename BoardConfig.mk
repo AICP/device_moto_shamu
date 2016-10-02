@@ -134,12 +134,9 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS := \
-    hardware/cyanogen   \
+    hardware/cyanogen/cmhw   \
     device/moto/shamu/cmhw
 
 USE_CLANG_PLATFORM_BUILD := true
 
-# Disable dex-preopt of prebuilts to save space.
-DONT_DEXPREOPT_PREBUILTS := true
-
--include vendor/moto/shamu/BoardConfigVendor.mk
+-include vendor/motorola/shamu/BoardConfigVendor.mk
