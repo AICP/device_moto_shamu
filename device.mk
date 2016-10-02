@@ -159,6 +159,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.rec_timeout=3500 \
     ro.facelock.est_max_time=600
 
+# Enable sdcardfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
+
 # Audio effects
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
