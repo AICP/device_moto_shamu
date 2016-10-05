@@ -147,13 +147,17 @@ PRODUCT_PACKAGES += \
     libaudio-resampler
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true \
-    persist.audio.dualmic.config=endfire \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=false \
-    ro.audio.monitorRotation=true \
-    drm.service.enabled=true \
+    media.aac_51_output_enabled=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.audio.monitorRotation=true
+
+#enable drm services
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
+
+#Enable facelock properties
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.black_timeout=700 \
     ro.facelock.det_timeout=2500 \
     ro.facelock.rec_timeout=3500 \
