@@ -209,7 +209,7 @@ PRODUCT_PACKAGES += \
     keystore.msm8084
 
 #Snap Camera
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     Snap
 
 # Snap Configs
