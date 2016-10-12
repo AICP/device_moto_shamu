@@ -249,6 +249,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.ignore_ims_wlan=1 \
     persist.radio.data_con_rprt=1
 
+# never dexopt the MotoSignature
+$(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
+
 #Reduce IMS logging
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.ims.disableDebugLogs=1 \
