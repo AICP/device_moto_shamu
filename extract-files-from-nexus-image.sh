@@ -85,7 +85,7 @@ function unpack_factory(){
 
   unzip  -d $outdir -o $outdir/$DEVICE-$BUILD/image-$DEVICE-${BUILD}.zip
   echo -e "If you are asked to enter your password for sudo,\nroot is needed for mounting images to pull files from them"
-  for image in system vendor; do
+  for image in system; do
     simg2img $outdir/${image}.img $outdir/${image}.ext4.img
     mkdir -p $outdir/${image}_mount
 
