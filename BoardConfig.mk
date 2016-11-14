@@ -137,7 +137,11 @@ BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw   \
     device/moto/shamu/cmhw
 
-# Use Snapdragon LLVM, if available
+# Use Snapdragon LLVM for Nightlies, if available
+ifeq ($(AICP_BUILDTYPE), UNOFFICIAL)
+USE_CLANG_PLATFORM_BUILD := true
+else
 TARGET_USE_SDCLANG := true
+endif
 
 -include vendor/motorola/shamu/BoardConfigVendor.mk
