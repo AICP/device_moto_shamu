@@ -54,8 +54,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # handled by the hardware composer
 MAX_VIRTUAL_DISPLAY_DIMENSION := 2048
 
-BOARD_EGL_CFG := device/moto/shamu/egl.cfg
-
 BOARD_USES_ALSA_AUDIO := true
 
 BOARD_SUPPORTS_SOUND_TRIGGER := true
@@ -131,17 +129,20 @@ USE_DEVICE_SPECIFIC_CAMERA:= true
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS := \
-    hardware/cyanogen/cmhw   \
-    device/moto/shamu/cmhw
-
 # Use Snapdragon LLVM for Nightlies, if available
 ifeq ($(AICP_BUILDTYPE), UNOFFICIAL)
 USE_CLANG_PLATFORM_BUILD := true
 else
 TARGET_USE_SDCLANG := true
 endif
+
+# Disable dex-preopt of prebuilts to save space.
+DONT_DEXPREOPT_PREBUILTS := true
+
+# CMHW
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS := \
+    hardware/cyanogen/cmhw   \
+    device/moto/shamu/cmhw
 
 -include vendor/motorola/shamu/BoardConfigVendor.mk
