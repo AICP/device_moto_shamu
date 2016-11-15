@@ -23,6 +23,5 @@ LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE := lights.shamu
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS += -Wno-unused-parameter -Werror
-LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
 include $(BUILD_SHARED_LIBRARY)
