@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7bed5b8b",
+        "filename": "extract-files-from-nexus-image.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 576
+      },
+      "writtenOn": "2016-11-17T14:24:22Z",
+      "side": 1,
+      "message": "You should remove vendor, as shamu has no vendor.img",
+      "revId": "0abf0ece3cfe9e2b15dc7efa2908201cca30a44f",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": false
+    }
+  ]
+}
