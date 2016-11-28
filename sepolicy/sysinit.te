@@ -1,0 +1,13 @@
+init_daemon_domain(sysinit)
+
+#============= sysinit ==============
+userdebug_or_eng(`
+    allow sysinit cache_file:dir getattr;
+    allow sysinit labeledfs:filesystem remount;
+    allow sysinit persist_file:dir getattr;
+    allow sysinit proc:file write;
+    allow sysinit rootfs:filesystem remount;
+    allow sysinit storage_file:dir getattr;
+    allow sysinit system_block_device:blk_file read;
+    allow sysinit system_data_file:dir write;
+')
