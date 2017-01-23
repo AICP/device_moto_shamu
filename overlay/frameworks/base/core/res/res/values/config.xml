@@ -345,4 +345,8 @@
 
     <!-- True if Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
+
+    <!-- Enable blur support -->
+    <bool name="config_uiBlurEnabled">true</bool>
+
 </resources>
