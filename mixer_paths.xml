@@ -516,7 +516,6 @@
 		<ctl name="QUAT_MI2S_RX_Voice Mixer Voice Stub" value="1" />
 		<ctl name="Voice Stub Tx Mixer STUB_TX_HL" value="1" />
 		<ctl name="Voice Stub Tx Mixer STUB_1_TX_HL" value="1" />
-		<ctl name="BOOST_STUB Right Mixer right VOICE_STUB_DL" value="1" />
 		<ctl name="BOOST_STUB Left Mixer left VOICE_STUB_DL" value="1" />
 	</path>
 
