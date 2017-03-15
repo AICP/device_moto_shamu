@@ -120,6 +120,7 @@ PRODUCT_PACKAGES := \
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
+    libbt-vendor \
     android.hardware.bluetooth@1.0-impl
 
 PRODUCT_PACKAGES += atmel.fw.apq8084
@@ -324,11 +325,6 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     android.hardware.nfc@1.0-impl
-
-ifeq ($(ENABLE_TREBLE), true)
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-service
-endif
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
