@@ -23,6 +23,9 @@ type adspd_data_file, file_type, data_file_type, mlstrustedobject;
 type audio_cutback_data_file, file_type, data_file_type;
 
 type sysfs_rmnet, fs_type, sysfs_type;
+
+type nfc_vendor_data_file, file_type, data_file_type;
+
 type sysfs_smdcntl_open_timeout, fs_type, sysfs_type;
 type sysfs_xhci_msm_hsic, fs_type, sysfs_type;
 type sysfs_msm_hsic_host, fs_type, sysfs_type;
