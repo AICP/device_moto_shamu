@@ -450,8 +450,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # OEM Unlock reporting
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.oem_unlock_supported=1
-
-# Charger
-WITH_CM_CHARGER := false
-PRODUCT_PACKAGES += \
-    charger_res_images
