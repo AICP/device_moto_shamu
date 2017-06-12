@@ -9,3 +9,7 @@ unix_socket_connect(untrusted_app, adspd, adspd)
 
 allow untrusted_app adspd_data_file:dir r_dir_perms;
 allow untrusted_app adspd_data_file:file r_file_perms;
+
+allow untrusted_app sysfs:file read;
+allow untrusted_app sysfs_mmi_touch:dir search;
+allow untrusted_app sysfs_zram:dir search;
