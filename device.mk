@@ -136,11 +136,21 @@ PRODUCT_PACKAGES += \
     qmi_motext_hook
 
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
     gralloc.msm8084 \
     hwcomposer.msm8084 \
     memtrack.msm8084 \
+    libgenlock \
     libqdutils \
     libqdMetaData
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # Sensors
 PRODUCT_PACKAGES += \
