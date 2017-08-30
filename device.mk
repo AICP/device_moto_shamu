@@ -393,9 +393,15 @@ endif
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.qualcomm.perf.cores_online=2
 
+# Power HAL
 PRODUCT_PACKAGES += \
-    power.shamu \
-    thermal.shamu
+    power.shamu
+
+
+# Thermal HAL
+PRODUCT_PACKAGES += \
+    thermal.shamu \
+    android.hardware.thermal@1.0-impl
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
