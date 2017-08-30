@@ -195,10 +195,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.shamu
 
-# for launcher layout
-#PRODUCT_PACKAGES += \
-#    ShamuLayout
-
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
