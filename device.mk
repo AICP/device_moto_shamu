@@ -137,6 +137,10 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libqdMetaData
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libstagefrighthw \
