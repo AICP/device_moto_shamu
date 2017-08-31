@@ -195,8 +195,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion
 
+# Light HAL
 PRODUCT_PACKAGES += \
-    lights.shamu
+    lights.shamu \
+    android.hardware.light@2.0-impl
 
 PRODUCT_PACKAGES += \
     bdAddrLoader
