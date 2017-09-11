@@ -102,6 +102,11 @@ vendor/moto/audiomonitor/sensory/svsid_triggerogn_enus_3_1.raw
 vendor/moto/audiomonitor/sensory/svsid_triggerogn_frfr_1_0.raw
 vendor/moto/audiomonitor/sensory/svsid_triggerogn_ptbr_2_1.raw
 
+# aptX
+lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
+lib/libaptXHD_encoder.so|974c486e4ca03faa0713553d9dfe2995ac93e01c
+lib/libldacBT_enc.so|6b9ad026c3e4dcd5cba654bd7b3848a0446f4e8c
+
 # Camera
 bin/mm-qcamera-daemon
 vendor/lib/libactuator_lc898122_camcorder.so
