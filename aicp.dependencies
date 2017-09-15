@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "AICP/kernel_moto_shamu",
+    "target_path": "kernel/moto/shamu",
+    "branch": "o8.0"
+  },
+  {
+    "repository": "AICP/proprietary_vendor_motorola",
+    "target_path": "vendor/motorola",
+    "branch": "o8.0"
+  }
+]
