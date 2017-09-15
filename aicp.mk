@@ -17,8 +17,8 @@
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AICP stuff.
+$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -30,7 +30,7 @@ $(call inherit-product-if-exists, vendor/motorola/shamu/shamu-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/moto/shamu/overlay-lineage
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_shamu
+PRODUCT_NAME := aicp_shamu
 PRODUCT_DEVICE := shamu
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6
