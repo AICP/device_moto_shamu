@@ -228,7 +228,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 # setup HWUI configs
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
-# only include verity on user builds for LineageOS
+# only include verity on user builds for AICP
 ifeq ($(TARGET_BUILD_VARIANT),user)
 # setup dm-verity configs.
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/msm_sdcc.1/by-name/system
