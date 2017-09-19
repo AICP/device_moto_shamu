@@ -483,6 +483,8 @@ static int power_open(const hw_module_t* module, const char* name,
             dev->get_number_of_platform_modes = get_number_of_platform_modes;
             dev->get_platform_low_power_stats = get_platform_low_power_stats;
             dev->get_voter_list = get_voter_list;
+            dev->setFeature = set_feature;
+            dev->getFeature = get_feature;
             *device = (hw_device_t*)dev;
         } else
             retval = -ENOMEM;
