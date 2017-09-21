@@ -84,7 +84,7 @@ PRODUCT_COPY_FILES += \
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    device/moto/shamu/sec_config:system/etc/sec_config
+    device/moto/shamu/sec_config:system/vendor/etc/sec_config
 
 # Touch firmware updater
 PRODUCT_COPY_FILES += \
@@ -325,7 +325,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    device/moto/shamu/gps.conf:system/etc/gps.conf
+    device/moto/shamu/gps.conf:system/vendor/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -352,8 +352,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:system/etc/permissions/android.hardware.nfc.hcef.xml \
-    device/moto/shamu/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/moto/shamu/nfc/libnfc-brcm-20795a10.conf:system/etc/libnfc-brcm-20795a10.conf
+    device/moto/shamu/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
+    device/moto/shamu/nfc/libnfc-brcm-20795a10.conf:system/vendor/etc/libnfc-brcm-20795a10.conf
 
 # NFCEE access control
 PRODUCT_COPY_FILES += \
