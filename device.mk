@@ -450,3 +450,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # OEM Unlock reporting
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.oem_unlock_supported=1
+
+# Assertive Display
+PRODUCT_COPY_FILES += \
+    device/moto/shamu/ad_calib.cfg:system/etc/ad_calib.cfg
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qcom.ad=1 \
+    ro.qcom.ad.calib.data=/system/etc/ad_calib.cfg
