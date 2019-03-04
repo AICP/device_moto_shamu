@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES += \
-    $(LOCAL_DIR)/lineage_shamu.mk
+    $(LOCAL_DIR)/aicp_shamu.mk
 
