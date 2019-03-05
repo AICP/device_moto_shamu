@@ -61,6 +61,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# Assertions
+TARGET_OTA_ASSERT_DEVICE := shamu
+
 # EGL
 # Maximum GLES shader cache size for each app to store the compiled shader
 # binaries. Decrease the size if RAM or Flash Storage size is a limitation
